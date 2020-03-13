@@ -20,6 +20,7 @@
 package main
 
 import (
+	"bufio"
 	"crypto/tls"
 	"encoding/json"
 	"flag"
@@ -34,7 +35,7 @@ import (
 func main() {
 
 	hostnamePtr := flag.String("h", "https://localhost:8080/api", "Philter API endpoint, e.g. https://localhost:8080/api")
-	filePtr := flag.String("f", "file", "The file to process.")
+	filePtr := flag.String("f", "", "The file to process.")
 	filterProfilePtr := flag.String("p", "default", "The filter profile (optional).")
 	contextPtr := flag.String("c", "default", "The context (optional).")
 	documentId := flag.String("d", "default", "The document ID (optional).")
@@ -54,23 +55,29 @@ func main() {
 		os.Exit(1)
 	}
 
+	var text = ""
+
 	if *filePtr == "" {
-		flag.PrintDefaults()
-		os.Exit(1)
-	}
 
-	if _, err := os.Stat(*filePtr); err != nil {
-		fmt.Printf("Input file was not found.\n");
-		flag.PrintDefaults()
-		os.Exit(1)
-	}
+		reader := bufio.NewReader(os.Stdin)
+		text, _ = reader.ReadString('\n')
 
-	content, err := ioutil.ReadFile(*filePtr)
-	if err != nil {
-		log.Fatal(err)
-	}
+	} else {
 
-	text := string(content)
+		if _, err := os.Stat(*filePtr); err != nil {
+			fmt.Printf("Input file was not found.\n");
+			flag.PrintDefaults()
+			os.Exit(1)
+		}
+
+		content, err := ioutil.ReadFile(*filePtr)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		text = string(content)
+
+	}
 
 	if *ignoreSsl == true {
 		http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}

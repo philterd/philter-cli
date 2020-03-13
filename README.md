@@ -22,6 +22,12 @@ Send the content of `input.txt` to Philter for processing with explanation. The 
 ./philter-cli -h https://54.81.15.61:8080 -f input.txt -e
 ```
 
+Read the input from stdin and send the text to Philter. The filtered text will be written to stdout.
+
+```
+echo "The SSN was 123-45-6789." | ./philter-cli -h https://54.81.15.61:8080 
+```
+
 All options:
 
 ```
