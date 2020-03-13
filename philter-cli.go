@@ -34,7 +34,7 @@ import (
 
 func main() {
 
-	hostnamePtr := flag.String("h", "https://localhost:8080/api", "Philter API endpoint, e.g. https://localhost:8080/api")
+	hostnamePtr := flag.String("h", "", "Philter API endpoint, e.g. https://localhost:8080/api")
 	filePtr := flag.String("f", "", "The file to process.")
 	filterProfilePtr := flag.String("p", "default", "The filter profile (optional).")
 	contextPtr := flag.String("c", "default", "The context (optional).")
