@@ -20,7 +20,6 @@
 package main
 
 import (
-	"bufio"
 	"crypto/tls"
 	"encoding/json"
 	"flag"
@@ -59,8 +58,8 @@ func main() {
 
 	if *filePtr == "" {
 
-		reader := bufio.NewReader(os.Stdin)
-		text, _ = reader.ReadString('\n')
+		bytes, _ := ioutil.ReadAll(os.Stdin)
+		text = string(bytes)
 
 	} else {
 
