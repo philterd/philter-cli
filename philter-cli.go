@@ -54,6 +54,17 @@ func main() {
 		os.Exit(1)
 	}
 
+	if *filePtr == "" {
+		flag.PrintDefaults()
+		os.Exit(1)
+	}
+
+	if _, err := os.Stat(*filePtr); err != nil {
+		fmt.Printf("Input file was not found.\n");
+		flag.PrintDefaults()
+		os.Exit(1)
+	}
+
 	content, err := ioutil.ReadFile(*filePtr)
 	if err != nil {
 		log.Fatal(err)
