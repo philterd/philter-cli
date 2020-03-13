@@ -2,6 +2,8 @@
 
 The **Philter CLI** is a tool to interact with [Philter](https://www.mtnfog.com/products/philter/) from the command line. Use it to send files to Philter for identification and removal of sensitive information.
 
+All operations can be achieved through the use of a tool like `cURL` but this project aims to provide a more user-friendly experience.
+
 This project uses the [philter-sdk-golang](https://github.com/mtnfog/philter-sdk-golang) library.
 
 [![Build Status](https://travis-ci.org/mtnfog/philter-cli.svg?branch=master)](https://travis-ci.org/mtnfog/philter-cli)
