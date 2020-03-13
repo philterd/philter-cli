@@ -34,6 +34,12 @@ Or cat the input from a file:
 cat input.txt | ./philter-cli -h https://54.81.15.61:8080 
 ```
 
+Read text from a file through stdin and write the filtered text to a different file:
+
+```
+cat input.txt | ./philter-cli -h https://54.81.15.61:8080 -i > filtered.txt
+```
+
 All options:
 
 ```
