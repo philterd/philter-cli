@@ -93,12 +93,12 @@ func main() {
 			return
 		}
 
-		fmt.Println(string(json))
+		fmt.Print(string(json))
 
 	} else {
 
 		var filterResponse = philter.Filter(*hostnamePtr, text, *contextPtr, *documentId, *filterProfilePtr)
-		fmt.Println(filterResponse.FilteredText)
+		fmt.Print(filterResponse.FilteredText)
 
 	}
 

@@ -28,6 +28,12 @@ Read the input from stdin and send the text to Philter. The filtered text will b
 echo "The SSN was 123-45-6789." | ./philter-cli -h https://54.81.15.61:8080 
 ```
 
+Or cat the input from a file:
+
+```
+cat input.txt | ./philter-cli -h https://54.81.15.61:8080 
+```
+
 All options:
 
 ```
