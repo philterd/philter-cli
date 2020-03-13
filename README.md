@@ -1,6 +1,6 @@
 # Philter CLI
 
-The **Philter CLI** is a tool to interact with Philter.
+The **Philter CLI** is a tool to interact with [Philter](https://www.mtnfog.com/products/philter/) from the command line. Use it to send files to Philter for identification and removal of sensitive information.
 
 [![Build Status](https://travis-ci.org/mtnfog/philter-cli.svg?branch=master)](https://travis-ci.org/mtnfog/philter-cli)
 
