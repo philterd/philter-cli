@@ -24,7 +24,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"github.com/mtnfog/philter-sdk-golang"
+	"github.com/mtnfog/philter-sdk-golang/philter"
 	"io/ioutil"
 	"log"
 	"net/http"
