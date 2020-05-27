@@ -41,6 +41,7 @@ func main() {
 	explain := flag.Bool("e", false, "Explain (optional).")
 	ignoreSsl := flag.Bool("i", false, "Ignore certificate errors.")
 	version := flag.Bool("v", false, "Show version.")
+	token := flag.String("t", "", "The API authentication token (optional).")
 
 	flag.Parse()
 
@@ -84,7 +85,7 @@ func main() {
 
 	if *explain == true {
 
-		var filterResponse = philter.Filter(*hostnamePtr, text, *contextPtr, *documentId, *filterProfilePtr)
+		var filterResponse = philter.Filter(*hostnamePtr, text, *contextPtr, *documentId, *filterProfilePtr, *token)
 
 		json, err := json.Marshal(filterResponse)
 		if err != nil {
@@ -96,7 +97,7 @@ func main() {
 
 	} else {
 
-		var filterResponse = philter.Filter(*hostnamePtr, text, *contextPtr, *documentId, *filterProfilePtr)
+		var filterResponse = philter.Filter(*hostnamePtr, text, *contextPtr, *documentId, *filterProfilePtr, *token)
 		fmt.Print(filterResponse.FilteredText)
 
 	}
