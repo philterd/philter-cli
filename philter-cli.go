@@ -33,8 +33,8 @@ import (
 
 func main() {
 
-	hostnamePtr := flag.String("h", "", "Philter API endpoint, e.g. https://localhost:8080/api")
-	filePtr := flag.String("f", "", "The file to process.")
+	hostnamePtr := flag.String("h", "https://localhost:8080", "Philter endpoint, e.g. https://localhost:8080")
+	filePtr := flag.String("f", "", "The file to process (optional).")
 	filterProfilePtr := flag.String("p", "default", "The filter profile (optional).")
 	contextPtr := flag.String("c", "default", "The context (optional).")
 	documentId := flag.String("d", "default", "The document ID (optional).")
@@ -46,7 +46,7 @@ func main() {
 	flag.Parse()
 
 	if *version == true {
-		fmt.Println("Philter CLI 1.0.0")
+		fmt.Println("Philter CLI 1.0.1")
 		os.Exit(0)
 	}
 

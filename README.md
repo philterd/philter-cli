@@ -27,19 +27,19 @@ Send the content of `input.txt` to Philter for processing with explanation. The 
 Read the input from stdin and send the text to Philter. The filtered text will be written to stdout.
 
 ```
-echo "The SSN was 123-45-6789." | ./philter-cli-linux-amd64 -h https://54.81.15.61:8080 
+echo "The SSN was 123-45-6789." | ./philter-cli-linux-amd64 -h https://54.81.15.61:8080
 ```
 
 Or cat the input from a file:
 
 ```
-cat input.txt | ./philter-cli-linux-amd64 -h https://54.81.15.61:8080 
+cat input.txt | ./philter-cli-linux-amd64 -h https://54.81.15.61:8080
 ```
 
 Read text from a file through stdin and write the filtered text to a different file:
 
 ```
-cat input.txt | ./philter-cli-linux-amd64 -h https://54.81.15.61:8080 -i > filtered.txt
+cat input.txt | ./philter-cli-linux-amd64 -h https://54.81.15.61:8080 > filtered.txt
 ```
 
 All options:
