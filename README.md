@@ -8,8 +8,6 @@ All operations can be achieved through the use of a tool like `cURL` but this pr
 
 This project uses the [philter-sdk-golang](https://github.com/mtnfog/philter-sdk-golang) library.
 
-[![Build Status](https://travis-ci.org/mtnfog/philter-cli.svg?branch=master)](https://travis-ci.org/mtnfog/philter-cli)
-
 ## Usage
 
 Send the content of `input.txt` to Philter for processing. The filtered text will be written to standard out.
